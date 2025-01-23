@@ -1,0 +1,73 @@
+/* Smooth scrolling behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Fade-in animatie bij het laden van de pagina */
+body {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Animatie voor de knoppen */
+.button-hover:hover {
+  transform: scale(1.05); /* Vergroot de knop */
+  transition: transform 0.3s ease-in-out; /* Zorg voor een vloeiende overgang */
+}
+
+/* Extra ruimte onder de video */
+#video-section {
+  margin-bottom: 50px; /* Voeg marge onder de video toe */
+}
+
+/* Blur effect voor de achtergrondafbeelding */
+.blur-background {
+  background-size: cover;
+  background-position: center;
+  filter: blur(8px); /* Pas hier de vervaging aan */
+}
+
+/* Verzendknop styling */
+.send-button {
+  background-color: #b4955f; /* Basis kleur */
+  color: white;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.send-button:hover {
+  background-color: #6a734a; /* Hover kleur */
+  transform: scale(1.05); /* Zoom in bij hover */
+}
+
+/* Contact Form Styling met schaduw */
+.contact-form {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Schaduw toegevoegd */
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Fade-in animatie voor knoppen */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
