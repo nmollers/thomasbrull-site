@@ -206,55 +206,54 @@
 
       // Event listener op submit
       form.addEventListener("submit", function (e) {
-        e.preventDefault(); // voorkomt direct verzenden
+        e.preventDefault();
 
         let valid = true;
 
-        // Alle velden ophalen
         const fields = ["name", "phone", "email", "message"];
 
         fields.forEach((fieldId) => {
           const input = document.getElementById(fieldId);
           const error = input.nextElementSibling;
 
-          // Trim value (belangrijk voor TC10)
           const value = input.value.trim();
 
-          // Reset foutmelding
           error.textContent = "";
 
-          // Check leeg veld (TC7, TC9)
+          // ✅ Leeg veld check (TC7, TC9, TC10)
           if (value === "") {
             error.textContent = "Dit veld is verplicht";
             valid = false;
             return;
           }
 
-          // Extra check voor email (TC8)
+          // ✅ Email validatie (TC8)
           if (fieldId === "email") {
-            const emailPattern = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // ✅ FIXED
             if (!emailPattern.test(value)) {
               error.textContent = "Voer een geldig e-mailadres in";
               valid = false;
             }
           }
+
+          // ✅ Telefoon validatie (NIEUW)
+          if (fieldId === "phone") {
+            const phonePattern = /^[0-9+\-\s]{6,15}$/;
+            if (!phonePattern.test(value)) {
+              error.textContent = "Voer een geldig telefoonnummer in";
+              valid = false;
+            }
+          }
         });
 
-        // Als alles geldig is
         if (valid) {
-          // Voorkomt meerdere submits (TC12)
           submitBtn.disabled = true;
           submitBtn.textContent = "Verzenden...";
 
-          // Simuleer verzending (hier kan je fetch/PHP blijven gebruiken)
           setTimeout(() => {
-            // Toon succesmelding (TC6)
             successMessage.classList.remove("hidden");
-
-            // Reset formulier (TC13)
             form.reset();
 
-            // Button weer actief maken
             submitBtn.disabled = false;
             submitBtn.textContent = "Verzenden";
           }, 1000);
