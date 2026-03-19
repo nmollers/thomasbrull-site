@@ -184,7 +184,9 @@
             </div>
 
             <!-- SUCCES MELDING -->
-            <p id="successMessage" class="text-green-600 font-bold hidden">Bericht verzonden<br>Wij nemen zo spoedig mogelijk contact met u op.</p>
+            <p id="successMessage" class="text-green-600 font-bold hidden">
+              Bericht verzonden<br />Wij nemen zo spoedig mogelijk contact met u op.
+            </p>
 
             <!-- SUBMIT BUTTON -->
             <div class="mt-4">
@@ -204,7 +206,7 @@
       const submitBtn = document.getElementById("submitBtn");
       const successMessage = document.getElementById("successMessage");
 
-      // Event listener op submit
+      /// Event listener op submit
       form.addEventListener("submit", function (e) {
         e.preventDefault();
 
@@ -218,34 +220,39 @@
 
           const value = input.value.trim();
 
+          // Reset foutmelding en styling
           error.textContent = "";
+          input.classList.remove("border-red-500");
 
-          // ✅ Leeg veld check (TC7, TC9, TC10)
+          // ✅ Leeg veld check
           if (value === "") {
             error.textContent = "Dit veld is verplicht";
+            input.classList.add("border-red-500");
             valid = false;
-            return;
-          }
-
-          // ✅ Email validatie (TC8)
-          if (fieldId === "email") {
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // ✅ FIXED
-            if (!emailPattern.test(value)) {
-              error.textContent = "Voer een geldig e-mailadres in";
-              valid = false;
+          } else {
+            // ✅ Email validatie
+            if (fieldId === "email") {
+              const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+              if (!emailPattern.test(value)) {
+                error.textContent = "Voer een geldig e-mailadres in";
+                input.classList.add("border-red-500");
+                valid = false;
+              }
             }
-          }
 
-          // ✅ Telefoon validatie (NIEUW)
-          if (fieldId === "phone") {
-            const phonePattern = /^[0-9+\-\s]{6,15}$/;
-            if (!phonePattern.test(value)) {
-              error.textContent = "Voer een geldig telefoonnummer in";
-              valid = false;
+            // ✅ Telefoon validatie
+            if (fieldId === "phone") {
+              const phonePattern = /^[0-9+\-\s]{6,15}$/;
+              if (!phonePattern.test(value)) {
+                error.textContent = "Voer een geldig telefoonnummer in";
+                input.classList.add("border-red-500");
+                valid = false;
+              }
             }
           }
         });
 
+        // ✅ Als alles correct is
         if (valid) {
           submitBtn.disabled = true;
           submitBtn.textContent = "Verzenden...";
@@ -253,6 +260,12 @@
           setTimeout(() => {
             successMessage.classList.remove("hidden");
             form.reset();
+
+            // 🔄 Reset alle rode randen na submit
+            fields.forEach((fieldId) => {
+              const input = document.getElementById(fieldId);
+              input.classList.remove("border-red-500");
+            });
 
             submitBtn.disabled = false;
             submitBtn.textContent = "Verzenden";
