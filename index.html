@@ -1,173 +1,298 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Klant Website</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="./css/styles.css">
-  <link rel="icon" href="./img/logo.png" type="image/x-icon">
-  <style>
-    /* Fade-in animatie voor knoppen */
-    .fade-in {
-      opacity: 0;
-      animation: fadeIn 1s forwards;
-    }
-
-    @keyframes fadeIn {
-      0% {
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Klant Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="icon" href="./img/logo.png" type="image/x-icon" />
+    <style>
+      /* Fade-in animatie voor knoppen */
+      .fade-in {
         opacity: 0;
+        animation: fadeIn 1s forwards;
       }
-      100% {
-        opacity: 1;
+
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
       }
-    }
-  </style>
-</head>
-<body class="bg-[#f7f3e9]">
-  <!-- Header -->
-  <header class="bg-[#b4955f] shadow-md">
-    <div class="container mx-auto flex justify-between items-center py-4 px-6">
-      <!-- Logo -->
-      <div class="text-2xl font-bold text-gray-800">
-        <a href="./index.html">
-          <img src="./img/logo.png" alt="Klant Logo" class="h-auto w-10">
+    </style>
+  </head>
+  <body class="bg-[#f7f3e9]">
+    <!-- Header -->
+    <header class="bg-[#b4955f] shadow-md">
+      <div class="container mx-auto flex justify-between items-center py-4 px-6">
+        <!-- Logo -->
+        <div class="text-2xl font-bold text-gray-800">
+          <a href="./index.html">
+            <img src="./img/logo.png" alt="Klant Logo" class="h-auto w-10" />
+          </a>
+        </div>
+
+        <!-- Navigatie-opties -->
+        <nav class="space-x-6 text-slate-50">
+          <a href="./views/dienstverleningA.html" class="hover:text-[#6a734a]">Dienstverlening A</a>
+          <a href="./views/dienstverleningB.html" class="hover:text-[#6a734a]">Dienstverlening B</a>
+          <a href="./views/dienstverleningC.html" class="hover:text-[#6a734a]">Diensverlening C</a>
+          <a href="./index.html#contact-section" class="hover:text-[#6a734a]">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Body -->
+    <main class="container mx-auto my-10 px-6">
+      <div class="grid grid-cols-2 gap-6">
+        <!-- Knop 1 -->
+        <a
+          href="./views/knop1.html"
+          class="relative block h-64 bg-cover bg-center rounded-lg shadow-lg hover:shadow-xl transition button-hover fade-in"
+          style="background-image: url(&quot;./img/knop1.png&quot;)"
+        >
+          <div class="absolute inset-0 bg-black bg-opacity-25 flex items-center justify-center">
+            <div class="absolute inset-0 blur-background"></div>
+            <!-- Blur toegevoegen aan de achtergrond -->
+            <span class="text-white text-xl font-bold absolute">Promoting</span>
+            <!-- Zet de tekst bovenop de afbeelding -->
+          </div>
+        </a>
+
+        <!-- Knop 2 -->
+        <a
+          href="./views/knop2.html"
+          class="relative block h-64 bg-cover bg-center rounded-lg shadow-lg hover:shadow-xl transition button-hover fade-in"
+          style="background-image: url(&quot;./img/knop2.png&quot;)"
+        >
+          <div class="absolute inset-0 bg-black bg-opacity-25 flex items-center justify-center">
+            <div class="absolute inset-0 blur-background"></div>
+            <!-- Blur toegevoegen aan de achtergrond -->
+            <span class="text-white text-xl font-bold absolute">Facilitating</span>
+            <!-- Zet de tekst bovenop de afbeelding -->
+          </div>
+        </a>
+
+        <!-- Knop 3 -->
+        <a
+          href="./views/knop3.html"
+          class="relative block h-64 bg-cover bg-center rounded-lg shadow-lg hover:shadow-xl transition button-hover fade-in"
+          style="background-image: url(&quot;./img/knop3.png&quot;)"
+        >
+          <div class="absolute inset-0 bg-black bg-opacity-25 flex items-center justify-center">
+            <div class="absolute inset-0 blur-background"></div>
+            <!-- Blur toegevoegen aan de achtergrond -->
+            <span class="text-white text-xl font-bold absolute">Analytical</span>
+            <!-- Zet de tekst bovenop de afbeelding -->
+          </div>
+        </a>
+
+        <!-- Knop 4 -->
+        <a
+          href="./views/knop4.html"
+          class="relative block h-64 bg-cover bg-center rounded-lg shadow-lg hover:shadow-xl transition button-hover fade-in"
+          style="background-image: url(&quot;./img/knop4.png&quot;)"
+        >
+          <div class="absolute inset-0 bg-black bg-opacity-25 flex items-center justify-center">
+            <div class="absolute inset-0 blur-background"></div>
+            <!-- Blur toegevoegen aan de achtergrond -->
+            <span class="text-white text-xl font-bold absolute">Controlling</span>
+            <!-- Zet de tekst bovenop de afbeelding -->
+          </div>
         </a>
       </div>
 
-      <!-- Navigatie-opties -->
-      <nav class="space-x-6 text-slate-50">
-        <a href="./views/dienstverleningA.html" class="hover:text-[#6a734a]">Dienstverlening A</a>
-        <a href="./views/dienstverleningB.html" class="hover:text-[#6a734a]">Dienstverlening B</a>
-        <a href="./views/dienstverleningC.html" class="hover:text-[#6a734a]">Diensverlening C</a>
-        <a href="./index.html#contact-section" class="hover:text-[#6a734a]">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Body -->
-  <main class="container mx-auto my-10 px-6">
-    <div class="grid grid-cols-2 gap-6">
-      <!-- Knop 1 -->
-      <a href="./views/knop1.html" class="relative block h-64 bg-cover bg-center rounded-lg shadow-lg hover:shadow-xl transition button-hover fade-in"
-         style="background-image: url('./img/knop1.png');">
-        <div class="absolute inset-0 bg-black bg-opacity-25 flex items-center justify-center">
-          <div class="absolute inset-0 blur-background"></div> <!-- Blur toegevoegen aan de achtergrond -->
-          <span class="text-white text-xl font-bold absolute">Promoting</span> <!-- Zet de tekst bovenop de afbeelding -->
-        </div>
-      </a>
-
-      <!-- Knop 2 -->
-      <a href="./views/knop2.html" class="relative block h-64 bg-cover bg-center rounded-lg shadow-lg hover:shadow-xl transition button-hover fade-in"
-         style="background-image: url('./img/knop2.png');">
-        <div class="absolute inset-0 bg-black bg-opacity-25 flex items-center justify-center">
-          <div class="absolute inset-0 blur-background"></div> <!-- Blur toegevoegen aan de achtergrond -->
-          <span class="text-white text-xl font-bold absolute">Facilitating</span> <!-- Zet de tekst bovenop de afbeelding -->
-        </div>
-      </a>
-
-      <!-- Knop 3 -->
-      <a href="./views/knop3.html" class="relative block h-64 bg-cover bg-center rounded-lg shadow-lg hover:shadow-xl transition button-hover fade-in"
-         style="background-image: url('./img/knop3.png');">
-        <div class="absolute inset-0 bg-black bg-opacity-25 flex items-center justify-center">
-          <div class="absolute inset-0 blur-background"></div> <!-- Blur toegevoegen aan de achtergrond -->
-          <span class="text-white text-xl font-bold absolute">Analytical</span> <!-- Zet de tekst bovenop de afbeelding -->
-        </div>
-      </a>
-
-      <!-- Knop 4 -->
-      <a href="./views/knop4.html" class="relative block h-64 bg-cover bg-center rounded-lg shadow-lg hover:shadow-xl transition button-hover fade-in"
-         style="background-image: url('./img/knop4.png');">
-        <div class="absolute inset-0 bg-black bg-opacity-25 flex items-center justify-center">
-          <div class="absolute inset-0 blur-background"></div> <!-- Blur toegevoegen aan de achtergrond -->
-          <span class="text-white text-xl font-bold absolute">Controlling</span> <!-- Zet de tekst bovenop de afbeelding -->
-        </div>
-      </a>
-    </div>
-
-    <!-- Pijltje onder de knoppen -->
-    <div class="flex justify-center mt-4">
-      <a href="javascript:void(0)" class="animate-bounce" id="scroll-to-video">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-gray-500 hover:text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-        </svg>
-      </a>
-    </div>
-  </main>
-
-  <!-- Video Section -->
-  <section id="video-section" class="mt-10">
-    <div class="container mx-auto px-6">
-      <div class="w-full max-w-4xl mx-auto aspect-video bg-gray-200 border-2 border-dashed border-gray-400 rounded-lg flex items-center justify-center">
-        <span class="text-gray-500">Video placeholder (voeg hier een video toe)</span>
+      <!-- Pijltje onder de knoppen -->
+      <div class="flex justify-center mt-4">
+        <a href="javascript:void(0)" class="animate-bounce" id="scroll-to-video">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-10 w-10 text-gray-500 hover:text-gray-700"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </a>
       </div>
-    </div>
-  </section>
+    </main>
 
-  <!-- Contact Section -->
-  <section id="contact-section" class="bg-[#b4955f] py-10">
-    <div class="container mx-auto px-6 text-center">
-      <h2 class="text-3xl font-bold text-white mb-6">Neem contact met ons op</h2>
-      <p class="text-lg text-white mb-6">Heb je vragen of wil je meer informatie? Laat het ons weten!</p>
-
-      <form action="./php/send-email.php" method="POST" class="contact-form">
-        <div class="grid grid-cols-1 gap-4">
-          <div>
-            <label for="name" class="block text-sm font-medium text-gray-700">Naam</label>
-            <input type="text" id="name" name="name" required class="w-full mt-2 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#b4955f]">
-          </div>
-          <div>
-            <label for="phone" class="block text-sm font-medium text-gray-700">Telefoonnummer</label>
-            <input type="tel" id="phone" name="phone" required class="w-full mt-2 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#b4955f]">
-          </div>
-          <div>
-            <label for="email" class="block text-sm font-medium text-gray-700">E-mail</label>
-            <input type="email" id="email" name="email" required class="w-full mt-2 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#b4955f]">
-          </div>
-          <div>
-            <label for="message" class="block text-sm font-medium text-gray-700">Bericht</label>
-            <textarea id="message" name="message" required rows="4" class="w-full mt-2 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#b4955f]"></textarea>
-          </div>
-          <div class="mt-4">
-            <button type="submit" class="send-button w-full py-2 px-4 text-lg font-bold rounded-md">Verzenden</button>
-          </div>
+    <!-- Video Section -->
+    <section id="video-section" class="mt-10">
+      <div class="container mx-auto px-6">
+        <div
+          class="w-full max-w-4xl mx-auto aspect-video bg-gray-200 border-2 border-dashed border-gray-400 rounded-lg flex items-center justify-center"
+        >
+          <span class="text-gray-500">Video placeholder (voeg hier een video toe)</span>
         </div>
-      </form>
-    </div>
-  </section>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTIE -->
+    <section id="contact-section" class="bg-[#b4955f] py-10">
+      <div class="container mx-auto px-6 text-center">
+        <!-- Titel -->
+        <header>
+          <h2 class="text-3xl font-bold text-white mb-6">Neem contact met ons op</h2>
+          <p class="text-lg text-white mb-6">Heb je vragen of wil je meer informatie? Laat het ons weten!</p>
+        </header>
+
+        <!-- FORMULIER -->
+        <form id="contactForm" action="./php/send-email.php" method="POST" class="contact-form">
+          <!-- Fieldset voor semantiek -->
+          <fieldset class="grid grid-cols-1 gap-4">
+            <legend class="sr-only">Contactformulier</legend>
+
+            <!-- NAAM -->
+            <div>
+              <label for="name">Naam</label>
+              <input type="text" id="name" name="name" required class="w-full mt-2 p-2 border rounded-md" />
+
+              <!-- Foutmelding -->
+              <small class="error text-red-500"></small>
+            </div>
+
+            <!-- TELEFOON -->
+            <div>
+              <label for="phone">Telefoonnummer</label>
+              <input type="tel" id="phone" name="phone" required class="w-full mt-2 p-2 border rounded-md" />
+              <small class="error text-red-500"></small>
+            </div>
+
+            <!-- EMAIL -->
+            <div>
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" required class="w-full mt-2 p-2 border rounded-md" />
+              <small class="error text-red-500"></small>
+            </div>
+
+            <!-- BERICHT -->
+            <div>
+              <label for="message">Bericht</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                required
+                class="w-full mt-2 p-2 border rounded-md"
+              ></textarea>
+              <small class="error text-red-500"></small>
+            </div>
+
+            <!-- SUCCES MELDING -->
+            <p id="successMessage" class="text-green-600 font-bold hidden">Bericht verzonden</p>
+
+            <!-- SUBMIT BUTTON -->
+            <div class="mt-4">
+              <button type="submit" id="submitBtn" class="send-button w-full py-2 px-4 text-lg font-bold rounded-md">
+                Verzenden
+              </button>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </section>
+
+    <!-- JAVASCRIPT VALIDATIE -->
+    <script>
+      // Form en button selecteren
+      const form = document.getElementById("contactForm");
+      const submitBtn = document.getElementById("submitBtn");
+      const successMessage = document.getElementById("successMessage");
+
+      // Event listener op submit
+      form.addEventListener("submit", function (e) {
+        e.preventDefault(); // voorkomt direct verzenden
+
+        let valid = true;
+
+        // Alle velden ophalen
+        const fields = ["name", "phone", "email", "message"];
+
+        fields.forEach((fieldId) => {
+          const input = document.getElementById(fieldId);
+          const error = input.nextElementSibling;
+
+          // Trim value (belangrijk voor TC10)
+          const value = input.value.trim();
+
+          // Reset foutmelding
+          error.textContent = "";
+
+          // Check leeg veld (TC7, TC9)
+          if (value === "") {
+            error.textContent = "Dit veld is verplicht";
+            valid = false;
+            return;
+          }
+
+          // Extra check voor email (TC8)
+          if (fieldId === "email") {
+            const emailPattern = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+            if (!emailPattern.test(value)) {
+              error.textContent = "Voer een geldig e-mailadres in";
+              valid = false;
+            }
+          }
+        });
+
+        // Als alles geldig is
+        if (valid) {
+          // Voorkomt meerdere submits (TC12)
+          submitBtn.disabled = true;
+          submitBtn.textContent = "Verzenden...";
+
+          // Simuleer verzending (hier kan je fetch/PHP blijven gebruiken)
+          setTimeout(() => {
+            // Toon succesmelding (TC6)
+            successMessage.classList.remove("hidden");
+
+            // Reset formulier (TC13)
+            form.reset();
+
+            // Button weer actief maken
+            submitBtn.disabled = false;
+            submitBtn.textContent = "Verzenden";
+          }, 1000);
+        }
+      });
+    </script>
 
     <!-- Scroll to Top Button -->
-    <button 
-    id="scrollToTopButton" 
-    class="hidden fixed bottom-6 right-6 z-50 w-12 h-12 bg-[#6a734a]   text-white rounded-full shadow-lg flex items-center justify-center focus:outline-none focus:ring focus:ring-blue-300"
-  >
-    ↑
-  </button>
+    <button
+      id="scrollToTopButton"
+      class="hidden fixed bottom-6 right-6 z-50 w-12 h-12 bg-[#6a734a] text-white rounded-full shadow-lg flex items-center justify-center focus:outline-none focus:ring focus:ring-blue-300"
+    >
+      ↑
+    </button>
 
-  <!-- JavaScript Smooth Scroll -->
-  <script>
-    // Voeg een click event listener toe voor de pijltjeslink
-    document.getElementById('scroll-to-video').addEventListener('click', function() {
-      const target = document.getElementById('video-section');
-      target.scrollIntoView({ behavior: 'smooth' });
-    });
+    <!-- JavaScript Smooth Scroll -->
+    <script>
+      // Voeg een click event listener toe voor de pijltjeslink
+      document.getElementById("scroll-to-video").addEventListener("click", function () {
+        const target = document.getElementById("video-section");
+        target.scrollIntoView({ behavior: "smooth" });
+      });
 
-    const scrollToTopButton = document.getElementById('scrollToTopButton');
+      const scrollToTopButton = document.getElementById("scrollToTopButton");
 
-// Show the button when scrolled down 200px
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 200) {
-    scrollToTopButton.classList.remove('hidden');
-  } else {
-    scrollToTopButton.classList.add('hidden');
-  }
-});
+      // Show the button when scrolled down 200px
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 200) {
+          scrollToTopButton.classList.remove("hidden");
+        } else {
+          scrollToTopButton.classList.add("hidden");
+        }
+      });
 
-// Scroll to top when the button is clicked
-scrollToTopButton.addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-  </script>
-
-</body>
+      // Scroll to top when the button is clicked
+      scrollToTopButton.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    </script>
+  </body>
 </html>
