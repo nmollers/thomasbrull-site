@@ -142,50 +142,42 @@
         </header>
 
         <!-- FORMULIER -->
-        <form id="contactForm" action="./php/send-email.php" method="POST" class="contact-form">
-          <!-- Fieldset voor semantiek -->
+        <form id="contactForm" action="./php/send-email.php" method="POST" class="contact-form" novalidate>
           <fieldset class="grid grid-cols-1 gap-4">
             <legend class="sr-only">Contactformulier</legend>
 
             <!-- NAAM -->
             <div>
               <label for="name">Naam</label>
-              <input type="text" id="name" name="name" required class="w-full mt-2 p-2 border rounded-md" />
-
-              <!-- Foutmelding -->
+              <input type="text" id="name" name="name" class="w-full mt-2 p-2 border rounded-md" />
               <small class="error text-red-500"></small>
             </div>
 
             <!-- TELEFOON -->
             <div>
               <label for="phone">Telefoonnummer</label>
-              <input type="tel" id="phone" name="phone" required class="w-full mt-2 p-2 border rounded-md" />
+              <input type="text" id="phone" name="phone" inputmode="tel" class="w-full mt-2 p-2 border rounded-md" />
               <small class="error text-red-500"></small>
             </div>
 
             <!-- EMAIL -->
             <div>
               <label for="email">E-mail</label>
-              <input type="email" id="email" name="email" required class="w-full mt-2 p-2 border rounded-md" />
+              <input type="text" id="email" name="email" inputmode="email" class="w-full mt-2 p-2 border rounded-md" />
               <small class="error text-red-500"></small>
             </div>
 
             <!-- BERICHT -->
             <div>
               <label for="message">Bericht</label>
-              <textarea
-                id="message"
-                name="message"
-                rows="4"
-                required
-                class="w-full mt-2 p-2 border rounded-md"
-              ></textarea>
+              <textarea id="message" name="message" rows="4" class="w-full mt-2 p-2 border rounded-md"></textarea>
               <small class="error text-red-500"></small>
             </div>
 
             <!-- SUCCES MELDING -->
             <p id="successMessage" class="text-green-600 font-bold hidden">
-              Bericht verzonden<br />Wij nemen zo spoedig mogelijk contact met u op.
+              Bericht verzonden<br />
+              Wij nemen zo spoedig mogelijk contact met u op.
             </p>
 
             <!-- SUBMIT BUTTON -->
@@ -201,12 +193,10 @@
 
     <!-- JAVASCRIPT VALIDATIE -->
     <script>
-      // Form en button selecteren
       const form = document.getElementById("contactForm");
       const submitBtn = document.getElementById("submitBtn");
       const successMessage = document.getElementById("successMessage");
 
-      /// Event listener op submit
       form.addEventListener("submit", function (e) {
         e.preventDefault();
 
@@ -224,13 +214,13 @@
           error.textContent = "";
           input.classList.remove("border-red-500");
 
-          // ✅ Leeg veld check
+          // Leeg veld check
           if (value === "") {
             error.textContent = "Dit veld is verplicht";
             input.classList.add("border-red-500");
             valid = false;
           } else {
-            // ✅ Email validatie
+            // Email validatie
             if (fieldId === "email") {
               const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
               if (!emailPattern.test(value)) {
@@ -240,7 +230,7 @@
               }
             }
 
-            // ✅ Telefoon validatie
+            // Telefoon validatie
             if (fieldId === "phone") {
               const phonePattern = /^[0-9+\-\s]{6,15}$/;
               if (!phonePattern.test(value)) {
@@ -252,7 +242,7 @@
           }
         });
 
-        // ✅ Als alles correct is
+        // Als alles correct is
         if (valid) {
           submitBtn.disabled = true;
           submitBtn.textContent = "Verzenden...";
@@ -261,7 +251,6 @@
             successMessage.classList.remove("hidden");
             form.reset();
 
-            // 🔄 Reset alle rode randen na submit
             fields.forEach((fieldId) => {
               const input = document.getElementById(fieldId);
               input.classList.remove("border-red-500");
